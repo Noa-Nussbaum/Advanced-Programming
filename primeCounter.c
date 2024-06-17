@@ -1,33 +1,28 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <time.h> 
 
-
-// Function to check if a number is prime
-bool isPrime(int n) {
-    if (n <= 1) {
-        return false;
+// Checks if a number is prime by testing divisibility from 2 up to the square root of the number
+bool checkPrime(int number) {
+    if (number <= 1) return false; // Numbers less than or equal to 1 are not prime
+    for (int divisor = 2; divisor * divisor <= number; divisor++) {
+        if (number % divisor == 0) return false; // A divisible number is not prime
     }
-    for (int i = 2; i * i <= n; i++) {
-        if (n % i == 0) {
-            return false;
-        }
-    }
-    return true;
+    return true; // Number is prime
 }
 
 int main() {
-    int num;
-    int total_counter = 0;
+    int inputNumber;
+    int primeCount = 0;
 
-    // Read numbers from stdin until end of file
-    while (scanf("%d", &num) != EOF) {   
-        if (isPrime(num)) {
-            total_counter++;
+    // Continuously read integers from standard input until EOF is reached
+    while (scanf("%d", &inputNumber) != EOF) {
+        if (checkPrime(inputNumber)) { // Check if the current number is prime
+            primeCount++; // Increment count if prime
         }
     }
-    
-    printf("%d total primes.\n", total_counter);
+
+    // Output the total count of prime numbers encountered
+    printf("%d total primes.\n", primeCount);
 
     return 0;
 }

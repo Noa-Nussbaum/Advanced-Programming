@@ -1,8 +1,8 @@
 .PHONY: all
-all: generator primeCounter myPrimeCounter 
+all: randomizer primeCounter myPrimeCounter 
 
-generator:  generator.c
-	gcc -o randomGenerator generator.c
+randomizer:  randomizer.c
+	gcc -o generator randomizer.c
 
 primeCounter:	primeCounter.c
 	gcc -o primeCounter primeCounter.c
@@ -13,4 +13,4 @@ myPrimeCounter: myPrimeCounter.c
 
 .PHONY: clean
 clean:
-	-rm randomGenerator primeCounter myPrimeCounter 2>/dev/null
+	-rm generator primeCounter myPrimeCounter 2>/dev/null
