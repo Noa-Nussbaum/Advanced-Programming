@@ -1,6 +1,6 @@
 # Random Prime Counter
 
-@ Haim Goldfisher & Asaf Yekutiel
+@ Noa Nussbaum & Dana Zorohov
 
 ## Description
 
