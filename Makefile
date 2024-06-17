@@ -1,16 +1,18 @@
-.PHONY: all
-all: randomizer primeCounter myPrimeCounter 
+.PHONY: all clean
 
-randomizer:  randomizer.c
-	gcc -o generator randomizer.c
+all: randomizer NumberOfPrimes myNumberOfPrimes
 
-primeCounter:	primeCounter.c
-	gcc -o primeCounter primeCounter.c
+randomizer: randomizer.c
+	gcc -o randomizer randomizer.c
 
-myPrimeCounter: myPrimeCounter.c
-	gcc -o myPrimeCounter myPrimeCounter.c -lpthread -lm
+modularArithmetic.o: modularArithmetic.c
+	gcc -c modularArithmetic.c
 
+NumberOfPrimes: NumberOfPrimes.c
+	gcc -o NumberOfPrimes NumberOfPrimes.c
 
-.PHONY: clean
+myNumberOfPrimes: myNumberOfPrimes.c modularArithmetic.o
+	gcc -o myNumberOfPrimes myNumberOfPrimes.c modularArithmetic.o -lpthread -lm
+
 clean:
-	-rm generator primeCounter myPrimeCounter 2>/dev/null
+	-rm -f randomizer NumberOfPrimes myNumberOfPrimes modularArithmetic.o
