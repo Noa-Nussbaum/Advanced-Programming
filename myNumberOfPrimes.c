@@ -48,6 +48,6 @@ int main() {
         free(threadData[i].primeCount);
     }   
 
-    printf("%d total primes found.\n", answer);
+    printf("%d primes.\n", answer);
     return 0;
 }
