@@ -1,6 +1,7 @@
     #include <stdio.h>
     #include <stdlib.h>
     #include <time.h>
+    #include "randomizer.h"
 
     int generateRandomNumber(int lower, int upper) {
         return rand() % (upper - lower + 1) + lower;

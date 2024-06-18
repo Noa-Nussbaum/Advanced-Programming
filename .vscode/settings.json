@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "modular_arithmetic.h": "c"
+        "modular_arithmetic.h": "c",
+        "modulararithmetic.h": "c"
     }
 }

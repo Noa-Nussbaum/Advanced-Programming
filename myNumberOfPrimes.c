@@ -5,16 +5,7 @@
 #include <stdatomic.h>
 #include "modularArithmetic.h"
 #include "primality.h"
-
-#define THREAD_COUNT 5
-#define SEGMENT_SIZE 2000000
-
-typedef struct {
-    atomic_int startIndex;  // Starting index for each thread
-    atomic_int endIndex;    // Ending index for each thread
-    int* primeCount;        // Local count of prime numbers found
-} ThreadData;
-
+#include "myNumberOfPrimes.h"
 
 
 
