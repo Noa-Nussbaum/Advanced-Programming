@@ -3,7 +3,11 @@ Assignment 2
 
 # Prime Stream Counter
 
-@ Noa Nussbaum && Dana Zorohov
+## Created By:
+* [Dana Zorohov](https://github.com/danaZo)
+* [Noa Nussbaum](https://github.com/Noa-Nussbaum)
+
+</br>
 
 ## Overview
 
