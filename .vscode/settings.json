@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "modular_arithmetic.h": "c",
-        "modulararithmetic.h": "c"
+        "modulararithmetic.h": "c",
+        "mynumberofprimes.h": "c",
+        "primality.h": "c",
+        "primecounter.h": "c"
     }
 }

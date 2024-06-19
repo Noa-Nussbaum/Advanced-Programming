@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "NumberOfPrimes.h"
+#include "primeCounter.h"
 
 // Checks if a number is prime by testing divisibility from 2 up to the square root of the number
 bool checkPrime(int number) {
