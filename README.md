@@ -61,14 +61,15 @@ time ./generator 10 10000000 | ./primeCounter
 time ./generator 10 10000000 | ./myNumberOfPrimes
 ```
 ## Explanation of the Code
-```generator.c```
-This file contains a simple random number generator. It generates numbers within a specified range using the rand() function.
+```generator.c```</br>
+This file contains a simple random number generator. It generates numbers within a specified range using the ```rand()``` function.
 
-primeCounter.c
+```primeCounter.c```</br>
 This is the basic implementation of the prime number counter. It reads numbers from standard input and checks if they are prime using a straightforward primality test.
 
-myNumberOfPrimes.c
+```myNumberOfPrimes.c```</br>
 This is the optimized, multithreaded implementation. It divides the workload among multiple threads, each processing a chunk of the input stream. It uses the Miller-Rabin primality test for efficient primality checking.
 
-modularArithmetic.c and primality.c
-These files contain functions for modular arithmetic operations and the Miller-Rabin primality test, respectively. These functions are used in the myNumberOfPrimes.c file to check if numbers are prime.
+```modularArithmetic.c``` and ```primality.c```</br>
+These files contain functions for modular arithmetic operations and the Miller-Rabin primality test, respectively. These functions are used in the ```myNumberOfPrimes.c``` file to check if numbers are prime.
+</br></br>
