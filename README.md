@@ -1,7 +1,4 @@
-Advanced Programming
-Assignment 2
-
-# Prime Stream Counter
+# Prime Number Counter with Multithreading
 
 ## Created By:
 * [Dana Zorohov](https://github.com/danaZo)
@@ -11,70 +8,67 @@ Assignment 2
 
 ## Overview
 
-This application is developed to handle a continuous stream of data, simulating a scenario such as a security camera feed where rapid processing is essential. It employs a provided random number generator to simulate an infinite stream of data, focusing on counting prime numbers rapidly to maximize the utilization of CPU cores.
+This project implements a multithreaded prime number counter. </br>
+It consists of a random number generator to simulate an endless data stream and a prime number counter that processes this stream using multiple threads. </br>
+The goal is to efficiently count the number of prime numbers in the generated stream.
+</br></br>
 
-## Compilation Instructions
+## Files
+- ```generator.c```: Generates random numbers within a specified range.
+- ```primeCounter.c```: A basic implementation to count prime numbers from standard input.
+- ```myNumberOfPrimes.c```: An optimized, multithreaded implementation to count prime numbers from standard input.
+- ```modularArithmetic.c```, ```modularArithmetic.h```: Contains functions for modular arithmetic operations.
+- ```primality.c```, ```primality.h```: Contains the implementation of the Miller-Rabin primality test.
+- ```myNumberOfPrimes.h```: Header file for the multithreaded prime counting implementation.
+- ```Makefile```: Build configuration file to compile the project.
+</br></br>
 
-Compile the application using the following command:
-```bash
-make
+## Building the Project
+To build the project, ensure you have ```gcc``` installed and run the following command:</br>
 ```
-Ensure that the `make` utility is installed on your machine.
-
-## Execution
-
-To run the application using a basic prime counting method:
-```bash
-./randomizer 7 1000 | ./NumberOfPrimes
+make all
 ```
-This executes the program using a seed of `7` to generate `1000` random numbers, which are then piped into the prime counting application. Parameters can be adjusted according to the requirements.
+This will compile the following executables:
+- ```generator```
+- ```primeCounter```
+- ```myNumberOfPrimes```
+</br></br>
 
-## Prime Counting Implementation
-
-The program, `enhancedPrimeCounter`, leverages parallel processing to efficiently manage the counting of prime numbers within the continuous data stream. This method significantly improves performance by utilizing multiple CPU cores through threading.
-
-### Details of Implementation
-
-- **Modular Arithmetic**: Incorporates functions like `modular_multiply` and `modular_exponentiation` to manage large numbers efficiently.
-- **Parallel Processing**: Distributes the data stream across multiple threads, each handling a portion of the data independently to speed up processing.
-- **Atomic Operations**: Uses atomic operations to synchronize the start and end indices of data chunks across threads, reducing overhead and avoiding locks.
-
-### Primality Testing
-
-Utilizes the Miller-Rabin primality test, a probabilistic method, to check for prime numbers. The test's accuracy improves with the number of iterations specified, enhancing the reliability of prime detection under high-throughput conditions.
-
-## Running the Enhanced Prime Counter
-
-Execute the enhanced prime counter with a command like:
-```bash
-./randomizer 10 10000000 | ./myNumberOfPrimes
+## Running the Project
+### Random Number Generator
+Generate random numbers using the ```generator``` executable. It requires two arguments: a seed and the number of values to generate.
 ```
-This setup processes 10 million numbers using a seed of `10`.
-
-## Performance Monitoring
-
-Measure execution time using:
-```bash
-time ./randomGenerator 10 10000000 | ./enhancedPrimeCounter
+./generator <seed> <number_of_values>
 ```
+Example:
+```
+./generator 10 100
+```
+### Basic Prime Counter
+Count the number of prime numbers from a stream using the basic ```primeCounter``` implementation:
+```
+./generator 10 100 | ./primeCounter
+```
+### Multithreaded Prime Counter
+Count the number of prime numbers from a stream using the optimized multithreaded implementation:
+```
+./generator 10 100 | ./myNumberOfPrimes
+```
+### Benchmarking
+To benchmark the performance, you can use the ```time``` command to measure the execution time:
+```
+time ./generator 10 10000000 | ./primeCounter
+time ./generator 10 10000000 | ./myNumberOfPrimes
+```
+## Explanation of the Code
+```generator.c```
+This file contains a simple random number generator. It generates numbers within a specified range using the rand() function.
 
-## Comparative Analysis
+primeCounter.c
+This is the basic implementation of the prime number counter. It reads numbers from standard input and checks if they are prime using a straightforward primality test.
 
-The performance of `enhancedPrimeCounter` is compared against the naive implementation using benchmarks that demonstrate a significant reduction in execution time.
+myNumberOfPrimes.c
+This is the optimized, multithreaded implementation. It divides the workload among multiple threads, each processing a chunk of the input stream. It uses the Miller-Rabin primality test for efficient primality checking.
 
-### Efficiency Metrics
-
-- **Execution Time**: The time command outputs user, system, and real time, indicating performance improvements.
-- **Memory Usage**: Monitored using tools like `valgrind` to ensure it does not exceed 2MB, vital for operations on limited-resource environments.
-
-### Results
-
-The `enhancedPrimeCounter` outperforms the basic version by up to 10 times, especially when the primality test function is optimized.
-
-## Dependencies
-
-Relies on the `make` and `valgrind` utilities for compilation and memory monitoring, respectively.
-
----
-
-This README reflects the task's requirement to utilize threading and optimize performance while ensuring memory usage does not exceed 2MB. It is structured to guide the user through compiling, running, and understanding the application within the specified constraints.
+modularArithmetic.c and primality.c
+These files contain functions for modular arithmetic operations and the Miller-Rabin primality test, respectively. These functions are used in the myNumberOfPrimes.c file to check if numbers are prime.
