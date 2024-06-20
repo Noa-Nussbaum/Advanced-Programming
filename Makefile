@@ -3,7 +3,7 @@
 all: generator primeCounter myNumberOfPrimes
 
 generator: generator.c generator.h
-	gcc -o generator generator.c
+	gcc -o randomGenerator generator.c
 
 modularArithmetic.o: modularArithmetic.c modularArithmetic.h
 	gcc -c modularArithmetic.c -o modularArithmetic.o
@@ -18,4 +18,4 @@ myNumberOfPrimes: myNumberOfPrimes.c myNumberOfPrimes.h modularArithmetic.o prim
 	gcc -o myNumberOfPrimes myNumberOfPrimes.c modularArithmetic.o primality.o -lpthread -lm
 
 clean:
-	-rm -f generator primeCounter myNumberOfPrimes modularArithmetic.o primality.o
+	-rm -f randomGenerator primeCounter myNumberOfPrimes modularArithmetic.o primality.o
