@@ -79,12 +79,13 @@ proof of less than 2MB RAM using valgring command:
 ```
 valgrind --tool=massif ./randomGenerator 10 100 | ./myNumberOfPrimes
 ```
-Then we receive output file named ```massif.out.4066```, print it with the command:
+Then we receive output file named ```massif.out.20785```, print it with the command:
 ```
-ms_print massif.out.4066
+ms_print massif.out.20785
 ```
 Result:
-![image](https://github.com/Noa-Nussbaum/Advanced-Programming/assets/93203695/0b7c2667-cc6d-4e36-8ea7-3dacbc4a92cc)
+![mem usage](https://github.com/Noa-Nussbaum/Advanced-Programming/assets/93203695/7d946a47-2cff-4044-ae43-1c2f3024460d)
+
 
 ### Valgrind Output Summary
 - Peak Total Memory Usage: 4,104 bytes (approximately 4 KB)
