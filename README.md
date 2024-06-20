@@ -73,3 +73,22 @@ This is the optimized, multithreaded implementation. It divides the workload amo
 ```modularArithmetic.c``` and ```primality.c```</br>
 These files contain functions for modular arithmetic operations and the Miller-Rabin primality test, respectively. These functions are used in the ```myNumberOfPrimes.c``` file to check if numbers are prime.
 </br></br>
+
+## Memory Usage
+proof of less than 2MB RAM using valgring command:
+```
+valgrind --tool=massif ./generator 10 100 | ./myNumberOfPrimes
+```
+Then we receive output file named ```massif.out.4066```, print it with the command:
+```
+ms_print massif.out.4066
+```
+Result:
+![image](https://github.com/Noa-Nussbaum/Advanced-Programming/assets/93203695/0b7c2667-cc6d-4e36-8ea7-3dacbc4a92cc)
+
+### Valgrind Output Summary
+- Peak Total Memory Usage: 4,104 bytes (approximately 4 KB)
+- Useful Heap: 4,096 bytes
+- Extra Heap: 8 bytes
+- Stacks: 0 bytes
+This confirms that the memory usage of the program is below the 2MB requirement.
