@@ -23,7 +23,7 @@ int main() {
     }
 
     // Output the total count of prime numbers encountered
-    printf("%d primes.\n", primeCount);
+    printf("%d total primes.\n", primeCount);
 
     return 0;
 }
