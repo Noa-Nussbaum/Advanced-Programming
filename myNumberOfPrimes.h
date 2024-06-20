@@ -14,6 +14,12 @@ typedef struct {
     int* primeCount;        // Local count of prime numbers found
 } ThreadData;
 
+struct ThreadArgs {
+    atomic_int start; // starting index for the thread
+    atomic_int end;  // ending index for the thread
+    int* local_counter; // local counter for prime numbers found by the thread
+};
+
 // Function declaration for thread_function
 void* thread_function(void* args);
 
