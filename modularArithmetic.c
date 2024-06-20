@@ -34,25 +34,16 @@ long long mod_mult(long long x, long long y, long long mod) {
  * @return The result of (base ^ exp) % mod.
  */
 long long mod_pow(long long base, long long exp, long long mod) {
-    // long long result = 1;  // Initialize result as 1. Any number to the power of 0 is 1.
-    // long long tempBase = base % mod;  // Reduce 'base' modulo 'mod' to simplify multiplication.
-    
-    // while (exp > 0) {
-    //     if (exp % 2 == 1)  // If the current power is odd, multiply the current result by the base.
-    //         result = mod_mult(result, tempBase, mod);
-    //     tempBase = mod_mult(tempBase, tempBase, mod);  // Square the base to move to the next power of 2.
-    //     exp /= 2;  // Divide exp by 2, moving to the next higher power of 2.
-    // }
-    // return result;  // Return the final computed result.
-
     long long result = 1;
     long long y = base;
     while (exp > 0) 
     {
-        if (exp % 2 == 1)
+        if (exp % 2 == 1){
             result = (result * y) % mod;
+        }
         y = (y * y) % mod;
         exp /= 2;
     }
-    return result % mod;
+    long long answer = result % mod;
+    return answer;
 }
