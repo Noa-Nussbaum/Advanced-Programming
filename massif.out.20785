@@ -1,5 +1,5 @@
 desc: (none)
-cmd: ./generator 10 100
+cmd: ./randomGenerator 10 100
 time_unit: i
 #-----------
 snapshot=0
@@ -12,7 +12,7 @@ heap_tree=empty
 #-----------
 snapshot=1
 #-----------
-time=159162
+time=159168
 mem_heap_B=4096
 mem_heap_extra_B=8
 mem_stacks_B=0
@@ -20,7 +20,7 @@ heap_tree=empty
 #-----------
 snapshot=2
 #-----------
-time=242615
+time=242621
 mem_heap_B=4096
 mem_heap_extra_B=8
 mem_stacks_B=0
@@ -34,11 +34,11 @@ n1: 4096 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
       n1: 4096 0x48CBCA8: outstring_func (vfprintf-internal.c:239)
        n1: 4096 0x48CBCA8: __vfprintf_internal (vfprintf-internal.c:1516)
         n1: 4096 0x48B679E: printf (printf.c:33)
-         n0: 4096 0x1092B2: main (in /home/dana/Advanced-Programming/generator)
+         n0: 4096 0x1092B2: main (in /home/dana/Advanced-Programming/randomGenerator)
 #-----------
 snapshot=3
 #-----------
-time=242615
+time=242621
 mem_heap_B=0
 mem_heap_extra_B=0
 mem_stacks_B=0
