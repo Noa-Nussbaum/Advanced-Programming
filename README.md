@@ -29,36 +29,36 @@ To build the project, ensure you have ```gcc``` installed and run the following 
 make all
 ```
 This will compile the following executables:
-- ```generator```
+- ```randomGenerator```
 - ```primeCounter```
 - ```myNumberOfPrimes```
 </br></br>
 
 ## Running the Project
 ### Random Number Generator
-Generate random numbers using the ```generator``` executable. It requires two arguments: a seed and the number of values to generate.
+Generate random numbers using the ```randomGenerator``` executable. It requires two arguments: a seed and the number of values to generate.
 ```
-./generator <seed> <number_of_values>
+./randomGenerator <seed> <number_of_values>
 ```
 Example:
 ```
-./generator 10 100
+./randomGenerator 10 100
 ```
 ### Basic Prime Counter
 Count the number of prime numbers from a stream using the basic ```primeCounter``` implementation:
 ```
-./generator 10 100 | ./primeCounter
+./randomGenerator 10 100 | ./primeCounter
 ```
 ### Multithreaded Prime Counter
 Count the number of prime numbers from a stream using the optimized multithreaded implementation:
 ```
-./generator 10 100 | ./myNumberOfPrimes
+./randomGenerator 10 100 | ./myNumberOfPrimes
 ```
 ### Benchmarking
 To benchmark the performance, you can use the ```time``` command to measure the execution time:
 ```
-time ./generator 10 10000000 | ./primeCounter
-time ./generator 10 10000000 | ./myNumberOfPrimes
+time ./randomGenerator 10 10000000 | ./primeCounter
+time ./randomGenerator 10 10000000 | ./myNumberOfPrimes
 ```
 ## Explanation of the Code
 ```generator.c```</br>
@@ -77,7 +77,7 @@ These files contain functions for modular arithmetic operations and the Miller-R
 ## Memory Usage
 proof of less than 2MB RAM using valgring command:
 ```
-valgrind --tool=massif ./generator 10 100 | ./myNumberOfPrimes
+valgrind --tool=massif ./randomGenerator 10 100 | ./myNumberOfPrimes
 ```
 Then we receive output file named ```massif.out.4066```, print it with the command:
 ```
