@@ -4,8 +4,8 @@
 #include <stdatomic.h>  // Include for atomic types
 
 // Constants used by multiple files or that configure the module's behavior
-#define THREAD_COUNT 5
-#define SEGMENT_SIZE 2000000
+#define THREAD_COUNT 4
+#define SEGMENT_SIZE 2500000
 
 // ThreadData structure to hold thread-specific data
 typedef struct {
