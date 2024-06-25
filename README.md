@@ -77,11 +77,11 @@ These files contain functions for modular arithmetic operations and the Miller-R
 ## Memory Usage
 proof of less than 2MB RAM using valgring command:
 ```
-valgrind --tool=massif ./randomGenerator 10 100 | ./myNumberOfPrimes
+valgrind --tool=massif --stacks=yes ./randomGenerator 10 100 | ./myNumberOfPrimes
 ```
-Then we receive output file named ```massif.out.20785```, print it with the command:
+Then we receive output file named ```massif.out.7464```, print it with the command:
 ```
-ms_print massif.out.20785
+ms_print massif.out.7464
 ```
 Result:
 ![mem usage](https://github.com/Noa-Nussbaum/Advanced-Programming/assets/93203695/7d946a47-2cff-4044-ae43-1c2f3024460d)
