@@ -85,6 +85,9 @@ ms_print massif.out.7464
 ```
 Result:
 ![mem usage](https://github.com/Noa-Nussbaum/Advanced-Programming/assets/93203695/7d946a47-2cff-4044-ae43-1c2f3024460d)
+After running with ```--stacks=yes```:
+![image](https://github.com/Noa-Nussbaum/Advanced-Programming/assets/76524924/94eadffa-49eb-498a-bf6e-a5e24eaa2f5c)
+
 
 
 ### Valgrind Output Summary
